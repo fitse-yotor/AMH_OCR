@@ -1,0 +1,7 @@
+import pytesseract
+from PIL import Image
+
+impath = Image.open('index.png')
+config = ('-l amh --oem 1 --psm 3')
+text = pytesseract.image_to_string(impath, config=config)
+print(text)
